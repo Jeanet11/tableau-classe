@@ -94,5 +94,17 @@ proportionFemme(classe1);
  moyenneAge2(classe1);
 
 
-     //Définissez une fonction plusVieux( classe ) qui renvoie l'objet associé à la personne la plus vielle ( On part du principe que toutes les personnes ont un age différent)
+     //Définissez une fonction plusVieux( classe )
 
+     // qui renvoie l'objet associé à la personne la plus vielle ( On part du principe que toutes les personnes ont un age différent)
+function plusVieux(classe) {
+	var max = 0;
+	for(var i = 0, c = classe.length; i < c; i++) {
+		if (classe[i].age > max) {
+			max = classe[i].age;
+		}
+	}
+	 return max;
+}
+
+console.log(plusVieux(classe1));
