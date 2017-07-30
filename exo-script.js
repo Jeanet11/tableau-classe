@@ -23,7 +23,7 @@ function nombreHommes(classe) {
 
 	for(i = 0; i < classe.length; i++) {
 		if('M' === classe[i].sexe ) {
-		  nbHomme++;
+			nbHomme++;
 		}
 	}
 
@@ -42,7 +42,7 @@ function proportionHomme(classe) {
 
 	return proportion;
 	
-  }
+}
 
 console.log("Il y a " + proportionHomme(classe1) + "% d'hommes.");
 
@@ -57,38 +57,42 @@ proportionFemme(classe1);
 
 
  //Définissez une fonction moyenneAge( classe ) qui renvoie la moyenne d'age de la classe.
-function moyenneAge(classe) {
+ function moyenneAge(classe) {
  	var sommeAges = 0;
 
  	for(var i = 0, c = classe.length; i < c; i++) {
-  		sommeAges = sommeAges + (classe[i].age);
+ 		sommeAges = sommeAges + (classe[i].age);
  	}
 
-    var moyenne = sommeAges / c;
- 	console.log("La moyenne d'âge de la classe est " +  moyenne + " ans.");
+ 	var moyenne = sommeAges / c;
+ 	return moyenne;
  }
 
- moyenneAge(classe1);
+ console.log("La moyenne d'âge de la classe est " + moyenneAge(classe1) + " ans.");
 
 
  // moyenne d'age par sexe
-function moyenneAge2(classe, sexe = "T") {
+ function moyenneAge2(classe, sexe = "T") {
+ 	
+ 		var sommeAges = 0;
+ 		var nombrePers = 0;
 
- 	var sommeAges = 0;
- 	var nombrePers = 0;
+ 		for(var i = 0, c = classe.length; i < c; i++) {
+ 			if (classe[i].sexe === sexe) {
 
-  	for(var i = 0, c = classe.length; i < c; i++) {
- 		if (classe[i].sexe === sexe) {
+ 				var sommeAges = sommeAges + classe[i].age;
+ 				nombrePers++;
+ 				var moyenne = sommeAges / nombrePers;
+ 			} 
+ 			else if(sexe === "T") {
+ 				var moyenne = moyenneAge(classe);
+ 			}
+  		}
+		console.log("La moyenne d'âge est " +  moyenne + " ans.");
+ }
 
- 			 var sommeAges = sommeAges + classe[i].age;
- 			 nombrePers++;
-  			 var moyenne = sommeAges / nombrePers;
-  		} 
- 		
-	}
-   	 console.log("La moyenne d'âge est " +  moyenne + " ans.");
-}
+ moyenneAge2(classe1);
 
- 
-moyenneAge2(classe1, "M");
+
+     //Définissez une fonction plusVieux( classe ) qui renvoie l'objet associé à la personne la plus vielle ( On part du principe que toutes les personnes ont un age différent)
 
