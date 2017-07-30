@@ -109,3 +109,14 @@ function plusVieux(classe) {
 
 console.log(plusVieux(classe2));
 
+/*Fonction qui affiche chaque prénom en utilisant
+une boucle*/
+function affichePrenom(classe) {
+	var prenoms = '';
+	for(var i = 0, c = classe.length; i < c;i++) {
+		prenoms = prenoms + classe[i].nom + ' ';
+	}
+	return prenoms;
+}
+
+console.log(affichePrenom(classe1));
