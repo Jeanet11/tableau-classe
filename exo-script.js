@@ -97,10 +97,11 @@ proportionFemme(classe1);
 //Afficher l'objet du plus vieux
 function plusVieux(classe) {
 	var max = 0;
+	var vieux = 0
 	for(var i = 0, c = classe.length; i < c; i++) {
 		if (classe[i].age > max) {
 			max = classe[i].age;
-			var vieux = i;
+			vieux = i;
 		}
 	}
 	return classe[vieux]; 
