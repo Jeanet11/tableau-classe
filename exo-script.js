@@ -31,7 +31,7 @@ function nombreHommes(classe) {
 }
 
 var nbHommes = nombreHommes(classe1);
-console.log("Il y a " + nbHommes + " hommes dans la classe.");
+console.log("Il y a " + nbHommes + " hommes dans la classe");
 
 
 // calcul du pourcentage d'hommes
@@ -44,14 +44,14 @@ function proportionHomme(classe) {
 	
   }
 
-console.log("Il y a " + proportionHomme(classe2) + "% d'hommes dans la classe.");
+console.log("Il y a " + proportionHomme(classe1) + "% d'hommes.");
 
 
 // calcul proportion femmes
 function proportionFemme(classe) {
 	var propHomme = proportionHomme(classe);
 	var propFemme = 100 - propHomme;
-	console.log("Il y a " + propFemme + "% de femmes dans la classe.");
+	console.log("Il y a " + propFemme + "% de femmes.");
 }
 proportionFemme(classe1);
 
@@ -72,38 +72,23 @@ function moyenneAge(classe) {
 
 
  // moyenne d'age par sexe
- /*function moyenneAge(classe, sexe = 'T') {
+function moyenneAge2(classe, sexe = "T") {
 
- 	for ("M" in classe) {
- 		var sommeAges = classe[];
+ 	var sommeAges = 0;
+ 	var nombrePers = 0;
 
- 	if (sexe === 'F') {
- 		sommeAges = 
+  	for(var i = 0, c = classe.length; i < c; i++) {
+ 		if (classe[i].sexe === sexe) {
 
-
- 	}
- }
-
-moyenneAge(classe1, 'F');
-
-*/
-/*
-function somme(classe) {
-	var plus = classe.reduce
-*/
-/*
-var classe0 = [
-'Pierre',
-'Jacques',
-'Marie',
-'Louis'
-];
-
-function displayClasse(classe) {
-	
-	for(i = 0; i < classe.length; i++) {
-		console.log(classe[i]);
+ 			 var sommeAges = sommeAges + classe[i].age;
+ 			 nombrePers++;
+  			 var moyenne = sommeAges / nombrePers;
+  		} 
+ 		
 	}
+   	 console.log("La moyenne d'âge est " +  moyenne + " ans.");
 }
-displayClasse(classe0);
-*/
+
+ 
+moyenneAge2(classe1, "M");
+
